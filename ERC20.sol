@@ -87,4 +87,12 @@ contract NewToken2 is ERC20Interface, SafeMath {
         emit Transfer(msg.sender, to, tokens);
         return true;
     }
+
+    function transferFrom(address from, address to, uint tokens) public returns (bool success) {
+        balances[from] = safeSub(balances[from], tokens);
+        allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(from, to, tokens);
+        return true;
+    }
 }
