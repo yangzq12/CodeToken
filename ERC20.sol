@@ -39,7 +39,7 @@ contract SafeMath {
 }
 
 
-contract NewToken2 is ERC20Interface, SafeMath {
+contract CodeToken is ERC20Interface, SafeMath {
     string public name;
     string public symbol;
     uint8 public decimals; // 18 decimals is the strongly suggested default, avoid changing it
@@ -55,8 +55,8 @@ contract NewToken2 is ERC20Interface, SafeMath {
      * Initializes contract with initial supply tokens to the creator of the contract
      */
     constructor() public {
-        name = "NewToken2";
-        symbol = "NT2";
+        name = "CodeToken";
+        symbol = "CT";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
 
